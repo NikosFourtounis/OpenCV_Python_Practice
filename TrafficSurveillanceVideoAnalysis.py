@@ -15,7 +15,7 @@ def play_videoFile(filePath,mirror=False):
 
         cv2.imshow('Video Life2Coding', fgmask)
  
-        if cv2.waitKey(20) == 27:
+        if cv2.waitKey(40) == 27:
             break  # esc to quit
  
     cv2.destroyAllWindows()
