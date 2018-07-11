@@ -34,7 +34,7 @@ while(1):
         frame = cv.circle(frame,(a,b),5,color[i].tolist(),-1)
     img = cv.add(frame,mask)
     cv.imshow('frame',img)
-    k = cv.waitKey(30) & 0xff
+    k = cv.waitKey(100) & 0xff
     if k == 27:
         break
     # Now update the previous frame and previous points
