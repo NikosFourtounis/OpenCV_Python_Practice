@@ -9,6 +9,10 @@ def play_videoFile(filePath):
     cap = cv2.VideoCapture(filePath)
     cv2.namedWindow('Video', cv2.WINDOW_AUTOSIZE)
 
+    #Low Video Resolution
+    cap.set(3, 100)
+    cap.set(4, 100)
+
     # Background Subtractor creation 
     fgbg = cv2.createBackgroundSubtractorMOG2()
 
@@ -17,11 +21,11 @@ def play_videoFile(filePath):
     
     # Change thresholds
     params.minThreshold = 1
-    params.maxThreshold = 2000
+    params.maxThreshold = 10000
     
     # Filter by Area
     params.filterByArea = True
-    params.minArea = 1000
+    params.minArea = 600
     
     # Filter by Circularity
     params.filterByCircularity = True
@@ -61,7 +65,7 @@ def play_videoFile(filePath):
 
 # Python Main
 def main():
-    play_videoFile('C:/Users/Nick/Documents/GitHub/OpenCV_Python_Practice/highway1.mp4')
+    play_videoFile('C:/Users/Nick/Documents/GitHub/OpenCV_Python_Practice/highway3.mp4')
 
 # Starting If
 if __name__ == '__main__':
